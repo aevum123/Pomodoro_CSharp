@@ -15,9 +15,8 @@ namespace Pomodoro_CSharp
     public partial class Pomodoro : Form
     {
         string soundToPlay = "c:\\Windows\\Media\\chimes.wav"; //This will set default sound to Chimes.wav
-
-        //Global variable for number of seconds that will be converted into mm:ss
-        double seconds = 0;
+       
+        double seconds = 0; //Global variable for number of seconds that will be converted into mm:ss
         const int SECS_PER_MINUTE = 60;
 
         public Pomodoro()
