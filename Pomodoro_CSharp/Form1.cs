@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,7 +36,12 @@ namespace Pomodoro_CSharp
             if (seconds == 0)
             {
                 countdownTimer.Stop();
+                using (var soundPlayer = new SoundPlayer(@"C:\Windows\Media\chimes.wav"))
+                {
+                    soundPlayer.Play();
+                }
                 MessageBox.Show("You're done!");
+
             }
         }
 
