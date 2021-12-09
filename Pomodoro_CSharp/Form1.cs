@@ -8,12 +8,13 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Pomodoro_CSharp
 {
     public partial class Pomodoro : Form
     {
-        string soundToPlay = "C:\\Windows\\Media\\chimes.wav"; // this would set default to Chimes.wav
+        string soundToPlay = "c:\\Windows\\Media\\chimes.wav"; //This will set default sound to Chimes.wav
 
         //Global variable for number of seconds that will be converted into mm:ss
         double seconds = 0;
@@ -24,7 +25,7 @@ namespace Pomodoro_CSharp
             InitializeComponent();
         } 
 
-        private void countdownTimer_Tick(object sender, EventArgs e)
+        private void countdownTimer_Tick(object sender, EventArgs e) // executes on Timer Tick
         {
             seconds--;
             TimeSpan span = TimeSpan.FromSeconds(seconds);
@@ -32,12 +33,13 @@ namespace Pomodoro_CSharp
             if (seconds == 0)
             {
                 countdownTimer.Stop();
+
                 using (var soundPlayer = new SoundPlayer(soundToPlay))
                 {
                     soundPlayer.Play();
                 }
-                MessageBox.Show("You're done!");
 
+                MessageBox.Show("You're done!");
             }
         }
         private void btn5_Click(object sender, EventArgs e)
@@ -102,6 +104,23 @@ namespace Pomodoro_CSharp
         private void chimesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             soundToPlay = "C:\\Windows\\Media\\chimes.wav";
+        }
+
+        private void chooseSoundFromFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = string.Empty;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = "c:\\Windows\\Media";
+            openFileDialog.Filter = "wav files (*.wav)|*.txt|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                soundToPlay = openFileDialog.FileName;
+            }
         }
     }
 }

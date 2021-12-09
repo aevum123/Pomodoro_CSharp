@@ -43,10 +43,11 @@ namespace Pomodoro_CSharp
             this.countdownTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.soundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseSoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseSoundFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,6 +183,13 @@ namespace Pomodoro_CSharp
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // soundToolStripMenuItem
             // 
             this.soundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -190,17 +198,11 @@ namespace Pomodoro_CSharp
             this.soundToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.soundToolStripMenuItem.Text = "Sound";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // chooseSoundToolStripMenuItem
             // 
             this.chooseSoundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chimesToolStripMenuItem});
+            this.chimesToolStripMenuItem,
+            this.chooseSoundFromFileToolStripMenuItem});
             this.chooseSoundToolStripMenuItem.Name = "chooseSoundToolStripMenuItem";
             this.chooseSoundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chooseSoundToolStripMenuItem.Text = "Choose Sound";
@@ -208,9 +210,16 @@ namespace Pomodoro_CSharp
             // chimesToolStripMenuItem
             // 
             this.chimesToolStripMenuItem.Name = "chimesToolStripMenuItem";
-            this.chimesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chimesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.chimesToolStripMenuItem.Text = "Chimes";
             this.chimesToolStripMenuItem.Click += new System.EventHandler(this.chimesToolStripMenuItem_Click);
+            // 
+            // chooseSoundFromFileToolStripMenuItem
+            // 
+            this.chooseSoundFromFileToolStripMenuItem.Name = "chooseSoundFromFileToolStripMenuItem";
+            this.chooseSoundFromFileToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.chooseSoundFromFileToolStripMenuItem.Text = "Choose Sound from File";
+            this.chooseSoundFromFileToolStripMenuItem.Click += new System.EventHandler(this.chooseSoundFromFileToolStripMenuItem_Click);
             // 
             // Pomodoro
             // 
@@ -257,6 +266,7 @@ namespace Pomodoro_CSharp
         private System.Windows.Forms.ToolStripMenuItem soundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chooseSoundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chimesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chooseSoundFromFileToolStripMenuItem;
     }
 }
 
