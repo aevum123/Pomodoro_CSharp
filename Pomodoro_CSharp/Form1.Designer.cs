@@ -41,12 +41,19 @@ namespace Pomodoro_CSharp
             this.btn35 = new System.Windows.Forms.Button();
             this.lblTimeLeft = new System.Windows.Forms.Label();
             this.countdownTimer = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseSoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn5
             // 
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5.Location = new System.Drawing.Point(12, 12);
+            this.btn5.Location = new System.Drawing.Point(12, 32);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(140, 121);
             this.btn5.TabIndex = 0;
@@ -57,7 +64,7 @@ namespace Pomodoro_CSharp
             // btn10
             // 
             this.btn10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn10.Location = new System.Drawing.Point(158, 12);
+            this.btn10.Location = new System.Drawing.Point(158, 32);
             this.btn10.Name = "btn10";
             this.btn10.Size = new System.Drawing.Size(140, 121);
             this.btn10.TabIndex = 1;
@@ -68,7 +75,7 @@ namespace Pomodoro_CSharp
             // btn15
             // 
             this.btn15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn15.Location = new System.Drawing.Point(304, 12);
+            this.btn15.Location = new System.Drawing.Point(304, 32);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(140, 121);
             this.btn15.TabIndex = 2;
@@ -79,7 +86,7 @@ namespace Pomodoro_CSharp
             // btn30
             // 
             this.btn30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn30.Location = new System.Drawing.Point(304, 139);
+            this.btn30.Location = new System.Drawing.Point(304, 159);
             this.btn30.Name = "btn30";
             this.btn30.Size = new System.Drawing.Size(140, 121);
             this.btn30.TabIndex = 5;
@@ -90,7 +97,7 @@ namespace Pomodoro_CSharp
             // btn25
             // 
             this.btn25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn25.Location = new System.Drawing.Point(158, 139);
+            this.btn25.Location = new System.Drawing.Point(158, 159);
             this.btn25.Name = "btn25";
             this.btn25.Size = new System.Drawing.Size(140, 121);
             this.btn25.TabIndex = 4;
@@ -101,7 +108,7 @@ namespace Pomodoro_CSharp
             // btn20
             // 
             this.btn20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn20.Location = new System.Drawing.Point(12, 139);
+            this.btn20.Location = new System.Drawing.Point(12, 159);
             this.btn20.Name = "btn20";
             this.btn20.Size = new System.Drawing.Size(140, 121);
             this.btn20.TabIndex = 3;
@@ -112,7 +119,7 @@ namespace Pomodoro_CSharp
             // btn45
             // 
             this.btn45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn45.Location = new System.Drawing.Point(304, 266);
+            this.btn45.Location = new System.Drawing.Point(304, 286);
             this.btn45.Name = "btn45";
             this.btn45.Size = new System.Drawing.Size(140, 121);
             this.btn45.TabIndex = 8;
@@ -123,7 +130,7 @@ namespace Pomodoro_CSharp
             // btn40
             // 
             this.btn40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn40.Location = new System.Drawing.Point(158, 266);
+            this.btn40.Location = new System.Drawing.Point(158, 286);
             this.btn40.Name = "btn40";
             this.btn40.Size = new System.Drawing.Size(140, 121);
             this.btn40.TabIndex = 7;
@@ -134,7 +141,7 @@ namespace Pomodoro_CSharp
             // btn35
             // 
             this.btn35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn35.Location = new System.Drawing.Point(12, 266);
+            this.btn35.Location = new System.Drawing.Point(12, 286);
             this.btn35.Name = "btn35";
             this.btn35.Size = new System.Drawing.Size(140, 121);
             this.btn35.TabIndex = 6;
@@ -146,7 +153,7 @@ namespace Pomodoro_CSharp
             // 
             this.lblTimeLeft.AutoSize = true;
             this.lblTimeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeLeft.Location = new System.Drawing.Point(200, 406);
+            this.lblTimeLeft.Location = new System.Drawing.Point(200, 410);
             this.lblTimeLeft.Name = "lblTimeLeft";
             this.lblTimeLeft.Size = new System.Drawing.Size(0, 24);
             this.lblTimeLeft.TabIndex = 9;
@@ -155,6 +162,55 @@ namespace Pomodoro_CSharp
             // 
             this.countdownTimer.Interval = 1000;
             this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.soundToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(457, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // soundToolStripMenuItem
+            // 
+            this.soundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chooseSoundToolStripMenuItem});
+            this.soundToolStripMenuItem.Name = "soundToolStripMenuItem";
+            this.soundToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.soundToolStripMenuItem.Text = "Sound";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // chooseSoundToolStripMenuItem
+            // 
+            this.chooseSoundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chimesToolStripMenuItem});
+            this.chooseSoundToolStripMenuItem.Name = "chooseSoundToolStripMenuItem";
+            this.chooseSoundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chooseSoundToolStripMenuItem.Text = "Choose Sound";
+            // 
+            // chimesToolStripMenuItem
+            // 
+            this.chimesToolStripMenuItem.Name = "chimesToolStripMenuItem";
+            this.chimesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chimesToolStripMenuItem.Text = "Chimes";
+            this.chimesToolStripMenuItem.Click += new System.EventHandler(this.chimesToolStripMenuItem_Click);
             // 
             // Pomodoro
             // 
@@ -171,8 +227,12 @@ namespace Pomodoro_CSharp
             this.Controls.Add(this.btn15);
             this.Controls.Add(this.btn10);
             this.Controls.Add(this.btn5);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Pomodoro";
             this.Text = "Pomodoro Technique";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +251,12 @@ namespace Pomodoro_CSharp
         private System.Windows.Forms.Button btn35;
         private System.Windows.Forms.Label lblTimeLeft;
         private System.Windows.Forms.Timer countdownTimer;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chooseSoundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chimesToolStripMenuItem;
     }
 }
 

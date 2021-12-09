@@ -13,6 +13,8 @@ namespace Pomodoro_CSharp
 {
     public partial class Pomodoro : Form
     {
+        string soundToPlay = "C:\\Windows\\Media\\chimes.wav"; // this would set default to Chimes.wav
+
         //Global variable for number of seconds that will be converted into mm:ss
         double seconds = 0;
         const int SECS_PER_MINUTE = 60;
@@ -20,13 +22,7 @@ namespace Pomodoro_CSharp
         public Pomodoro()
         {
             InitializeComponent();
-        }
-
-        private void btn5_Click(object sender, EventArgs e)
-        {
-            seconds = 5 * SECS_PER_MINUTE;
-            countdownTimer.Start();
-        }
+        } 
 
         private void countdownTimer_Tick(object sender, EventArgs e)
         {
@@ -36,13 +32,18 @@ namespace Pomodoro_CSharp
             if (seconds == 0)
             {
                 countdownTimer.Stop();
-                using (var soundPlayer = new SoundPlayer(@"C:\Windows\Media\chimes.wav"))
+                using (var soundPlayer = new SoundPlayer(soundToPlay))
                 {
                     soundPlayer.Play();
                 }
                 MessageBox.Show("You're done!");
 
             }
+        }
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            seconds = 5 * SECS_PER_MINUTE;
+            countdownTimer.Start();
         }
 
         private void btn10_Click(object sender, EventArgs e)
@@ -91,6 +92,16 @@ namespace Pomodoro_CSharp
         {
             seconds = 45 * SECS_PER_MINUTE;
             countdownTimer.Start();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void chimesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            soundToPlay = "C:\\Windows\\Media\\chimes.wav";
         }
     }
 }
