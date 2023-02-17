@@ -107,12 +107,12 @@ namespace Pomodoro_CSharp
 
         private void chooseSoundFromFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string filePath = string.Empty;
+            string filepath = string.Empty;
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.InitialDirectory = "c:\\Windows\\Media";
-            openFileDialog.Filter = "wav files (*.wav)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Filter = "wav files (*.wav)|.*txt|All Files (*.*)|*.*";
             openFileDialog.FilterIndex = 2;
             openFileDialog.RestoreDirectory = true;
 
