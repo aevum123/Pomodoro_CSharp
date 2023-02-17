@@ -48,6 +48,7 @@ namespace Pomodoro_CSharp
             this.chooseSoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseSoundFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,6 +179,7 @@ namespace Pomodoro_CSharp
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.colorToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -186,7 +188,7 @@ namespace Pomodoro_CSharp
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -220,6 +222,13 @@ namespace Pomodoro_CSharp
             this.chooseSoundFromFileToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.chooseSoundFromFileToolStripMenuItem.Text = "Choose Sound from File";
             this.chooseSoundFromFileToolStripMenuItem.Click += new System.EventHandler(this.chooseSoundFromFileToolStripMenuItem_Click);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Text = "Color";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // Pomodoro
             // 
@@ -267,6 +276,7 @@ namespace Pomodoro_CSharp
         private System.Windows.Forms.ToolStripMenuItem chooseSoundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chooseSoundFromFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
     }
 }
 

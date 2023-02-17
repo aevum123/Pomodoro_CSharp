@@ -121,5 +121,15 @@ namespace Pomodoro_CSharp
                 soundToPlay = openFileDialog.FileName;
             }
         }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog c = new ColorDialog();
+            
+            if ( c.ShowDialog() == DialogResult.OK )
+            {
+                this.BackColor = c.Color;
+            }
+        }
     }
 }
